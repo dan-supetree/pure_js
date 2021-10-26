@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  border-bottom: 1px solid #e3e3e3;
+  background-color: black;
+  color: white;
+}
+
+.header__logo {
+  padding-right: 1rem;
+  font-weight: bold;
+}
+
+.header__menu a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: white;
+}
+
+.content-container {
+  padding-top: 52px;
+}
+
+.footer-container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  padding: 2rem;
+}
+
+.footer-container .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

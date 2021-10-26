@@ -1,11 +1,21 @@
+:root {
+  --border-color: #e3e3e3;
+  --main-background-color: #f6f8fa;
+  --sidebar-background-color: #ffffff;
+}
+
+#app {
+  position: relative;
+}
+
 .header {
   display: flex;
   padding: 1rem;
-  position: fixed;
   width: 100%;
-  border-bottom: 1px solid #e3e3e3;
+  border-bottom: 1px solid var(--border-color);
   background-color: black;
   color: white;
+  z-index: 10;
 }
 
 .header__logo {
@@ -17,10 +27,6 @@
   margin-left: 1rem;
   text-decoration: none;
   color: white;
-}
-
-.content-container {
-  padding-top: 52px;
 }
 
 .footer-container {
@@ -37,4 +43,73 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+.content-container {
+  display: flex;
+}
+
+.content-container__sidebar {
+  position: relative;
+  height: 100vh;
+  width: 33.333%;
+  padding: 0 1rem;
+  border-right: 1px solid #d8dee4;
+}
+
+.sidebar__section__profile {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0;
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar__section__profile__image {
+  margin: 0.5rem 1rem;
+  height: 1.8rem;
+}
+
+.sidebar__section__profile__image img {
+  border-radius: 50%;
+}
+
+.sidebar__section__profile__name {
+  font-weight: bold;
+}
+
+.sidebar__section__repositories {
+  margin-top: 2rem;
+}
+
+.content-container__main {
+  padding: 0 1rem;
+  width: 66.666%;
+  flex: auto;
+  background-color: #f6f8fa;
+}
+
+.repositories {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.recent-activities {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.recent-activities__desc {
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.team {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.list-empty {
+  font-size: 0.85rem;
 }
