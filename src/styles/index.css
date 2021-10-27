@@ -20,8 +20,15 @@
 }
 
 .header__logo {
+  display: flex;
+  align-items: center;
   padding-right: 1rem;
   font-weight: bold;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
 }
 
 .header__menu a {
