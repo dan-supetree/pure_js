@@ -30,8 +30,6 @@ class App extends Component {
     new Footer(this.target.querySelector("div.footer-container"));
     new Sidebar(this.target.querySelector("aside.content-container__sidebar"));
     new Main(this.target.querySelector("div.content-container__main"));
-
-    this.mounted();
   }
 }
 

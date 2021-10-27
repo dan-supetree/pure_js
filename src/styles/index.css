@@ -2,6 +2,7 @@
   --border-color: #e3e3e3;
   --main-background-color: #f6f8fa;
   --sidebar-background-color: #ffffff;
+  --white-color: #ffffff;
 }
 
 #app {
@@ -14,7 +15,7 @@
   width: 100%;
   border-bottom: 1px solid var(--border-color);
   background-color: black;
-  color: white;
+  color: var(--white-color);
   z-index: 10;
 }
 
@@ -26,15 +27,12 @@
 .header__menu a {
   margin-left: 1rem;
   text-decoration: none;
-  color: white;
+  color: var(--white-color);
 }
 
 .footer-container {
-  position: absolute;
-  width: 100%;
-  bottom: 0;
   background-color: black;
-  color: white;
+  color: var(--white-color);
   padding: 2rem;
 }
 
@@ -71,6 +69,7 @@
 .sidebar__section__profile__image {
   margin: 0.5rem 1rem;
   height: 1.8rem;
+  width: 1.8rem;
 }
 
 .sidebar__section__profile__image img {
@@ -139,4 +138,33 @@
 
 .main__section {
   padding: 0 1rem;
+}
+
+.activity {
+  padding-left: 0;
+  padding-bottom: 2rem;
+}
+
+.activity__card {
+  margin-bottom: 1.5rem;
+}
+
+.activity__card__repo {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--white-color);
+}
+
+.activity__card__event {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.activity__card__repo__title {
+  margin: 0.85rem 0;
+  font-size: 1rem;
+}
+.activity__card__repo__description {
+  font-size: 0.85rem;
 }

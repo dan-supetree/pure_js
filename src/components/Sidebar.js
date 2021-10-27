@@ -47,6 +47,7 @@ class Sidebar extends Component {
 
   async mounted() {
     const repositories = await api.fetchRepositories();
+
     this.setState({ repositories });
     this.render();
   }

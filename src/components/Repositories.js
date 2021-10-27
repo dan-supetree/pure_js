@@ -3,12 +3,10 @@ import Component from "../core/component.js";
 class Repositories extends Component {
   constructor($target, props) {
     super($target, props);
-    console.log(props);
     this.render();
   }
 
   template() {
-    console.log(this.props);
     if (!this.props?.repositories?.length)
       return `<div class="list-empty">No Repositories</div>`;
 
