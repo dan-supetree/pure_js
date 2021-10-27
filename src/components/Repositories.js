@@ -3,25 +3,31 @@ import Component from "../core/component.js";
 class Repositories extends Component {
   constructor($target, props) {
     super($target, props);
+    console.log(props);
     this.render();
   }
 
   template() {
+    console.log(this.props);
     if (!this.props?.repositories?.length)
       return `<div class="list-empty">No Repositories</div>`;
 
     return `
-        <ul>
-          ${this.props.repositories.map(
-            ({ src, name }) => `
-            <li>
+        <ul class="repository-list">
+          ${this.props.repositories
+            .map(
+              ({ full_name: fullName, owner }) => `
+            <li class="repository-item">
                 <div>
-                  <img src="${src}" alt="${name}"/>
-                  <div>${name}</div>
+                  <figure class="repository-item__img">
+                    <img  src="${owner.avatar_url}" alt="${owner.login}"/>
+                  </figure>
+                  <div class="repository-item__name">${fullName}</div>
                 </div>
             </li>
-        `
-          )}
+          `
+            )
+            .join("")}
         </ul>
         `;
   }

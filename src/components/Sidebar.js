@@ -1,12 +1,14 @@
 import Component from "../core/component.js";
 import Repositories from "./Repositories.js";
 import Teams from "./Teams.js";
+import api from "../apis/index.js";
 
 class Sidebar extends Component {
   constructor($target) {
     super($target);
     this.setup();
     this.render();
+    this.mounted();
   }
 
   template() {
@@ -43,16 +45,19 @@ class Sidebar extends Component {
     };
   }
 
-  mounted() {}
+  async mounted() {
+    const repositories = await api.fetchRepositories();
+    this.setState({ repositories });
+    this.render();
+  }
 
   render() {
     const { repositories, teams } = this.state;
     this.target.innerHTML = this.template();
-    new Repositories(
-      document.querySelector(".repositories__list", { repositories })
-    );
+    new Repositories(document.querySelector(".repositories__list"), {
+      repositories,
+    });
     new Teams(document.querySelector(".team__list"), { teams });
-    this.mounted();
   }
 }
 
