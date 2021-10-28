@@ -37,6 +37,21 @@
   color: var(--white-color);
 }
 
+.header__search {
+  max-width: 15rem;
+  width: 100%;
+  margin-right: 1rem;
+}
+
+.search__container {
+  width: inherit;
+}
+
+.search__input {
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+}
+
 .footer-container {
   background-color: black;
   color: var(--white-color);
