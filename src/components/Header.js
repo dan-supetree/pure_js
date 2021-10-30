@@ -12,6 +12,7 @@ class Header extends Component {
     const q = window.location.search.replace(/\?q=/, "");
     this.state = {
       value: q || "",
+      isPreviewOpen: false,
     };
   }
 
@@ -31,17 +32,23 @@ class Header extends Component {
   }
 
   render() {
-    const { value } = this.state;
+    const { value, isPreviewOpen } = this.state;
     this.target.innerHTML = this.template();
-
     new SearchInput(this.target.querySelector(".search__container"), {
       placeholder: "Search or jump to...",
       value,
+      isPreviewOpen,
       handleChange: (e) => {
         e.preventDefault();
-
         const { value } = e.target;
         history.pushState({ q: value }, "", `?q=${value}`);
+      },
+      handleFocus: (e) => {
+        console.log(e.target);
+        this.setState({ isPreviewOpen: true, value });
+      },
+      handleBlur: (e) => {
+        this.setState({ value: "", isPreviewOpen: false });
       },
     });
   }

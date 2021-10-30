@@ -52,6 +52,12 @@
   width: 100%;
 }
 
+.search__prview {
+  min-height: 1rem;
+  width: 100%;
+  background-color: var(--white-color);
+}
+
 .footer-container {
   background-color: black;
   color: var(--white-color);

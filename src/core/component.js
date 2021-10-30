@@ -18,8 +18,10 @@ class Component {
 
   addEvent(eventType, selector, callback) {
     const children = [...this.target.querySelectorAll(selector)];
-    const isTarget = (target) =>
-      children.includes(target) || target.closest(selector);
+
+    const isTarget = (target) => {
+      return children.includes(target) || target.closest(selector);
+    };
 
     this.target.addEventListener(eventType, (e) => {
       if (!isTarget(e.target)) return false;

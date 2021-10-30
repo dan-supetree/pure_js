@@ -8,15 +8,18 @@ class SearchInput extends Component {
   }
 
   template() {
-    const { placeholder, value } = this.props;
+    const { placeholder, value, isPreviewOpen } = this.props;
     return `
       <input class="search__input" type="text" placeholder="${placeholder}" value="${value}"/>
     `;
   }
 
   mounted() {
-    const { handleChange } = this.props;
+    const { handleChange, handleFocus, handleBlur } = this.props;
+    const input = this.target.querySelector(".search__input");
     this.addEvent("change", ".search__input", handleChange);
+    input.addEventListener("focus", handleFocus);
+    //this.addEvent("blur", ".search__input", handleBlur);
   }
 }
 
